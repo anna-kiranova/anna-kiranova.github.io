@@ -12,7 +12,7 @@
     float: right;
 }
 
-:root {
+html {
     --mainColor: #ff9800;
 }
 

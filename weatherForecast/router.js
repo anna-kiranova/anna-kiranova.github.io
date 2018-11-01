@@ -1,3 +1,5 @@
+'use strict';
+
 function Router(options) {
     this.routes = options.routes || [];
     this.eventBus = options.eventBus;
@@ -15,8 +17,12 @@ Router.prototype.handleUrl = function(url) {
     return Promise.resolve()
         .then(() => {
             if (previousRoute) {
-                if (this.eventBus) {    //"route:about:leave"
-                    this.eventBus.trigger('route:' + previousRoute.name + ':leave', ...this.currentRouteParams);
+                if (this.eventBus) {
+                    //"route:about:leave"
+                    this.eventBus.trigger(
+                        'route:' + previousRoute.name + ':leave',
+                        ...this.currentRouteParams
+                    );
                 }
                 return (
                     previousRoute.onLeave &&
@@ -24,32 +30,33 @@ Router.prototype.handleUrl = function(url) {
                 );
             }
         })
-        .then(
-            () => {
-                if (newRoute) {
-                    if (this.eventBus) {    //"route:about:beforeenter"
-                        this.eventBus.trigger('route:' + newRoute.name + ':beforeenter', ...routeParams);
-                    }
-                    return (
-                        newRoute.onBeforeEnter &&
-                        newRoute.onBeforeEnter(...routeParams)
+        .then(() => {
+            if (newRoute) {
+                if (this.eventBus) {
+                    //"route:about:beforeenter"
+                    this.eventBus.trigger(
+                        'route:' + newRoute.name + ':beforeenter',
+                        ...routeParams
                     );
                 }
+                return (
+                    newRoute.onBeforeEnter &&
+                    newRoute.onBeforeEnter(...routeParams)
+                );
             }
-        )
-        .then(
-            () => {
-                if (newRoute) {
-                    if (this.eventBus) {    //"route:about:enter"
-                        this.eventBus.trigger('route:' + newRoute.name + ':enter', ...routeParams);
-                    }
-                    return (
-                        newRoute.onEnter &&
-                        newRoute.onEnter(...routeParams)
+        })
+        .then(() => {
+            if (newRoute) {
+                if (this.eventBus) {
+                    //"route:about:enter"
+                    this.eventBus.trigger(
+                        'route:' + newRoute.name + ':enter',
+                        ...routeParams
                     );
                 }
+                return newRoute.onEnter && newRoute.onEnter(...routeParams);
             }
-        )
+        })
         .then(() => {
             this.currentRoute = newRoute;
             this.currentRouteParams = routeParams;

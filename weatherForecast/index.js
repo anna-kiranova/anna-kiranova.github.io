@@ -2,7 +2,7 @@
 
 function hideAll() {
     let content = document.getElementById('content');
-    let footer = document.getElementById('footer')
+    let footer = document.getElementById('footer');
     footer.style.display = 'none';
     let nodes = content.querySelectorAll('#content > div');
     for (var i = 0; i < nodes.length; i++) {
@@ -15,41 +15,40 @@ const bus = new EventBus();
 let myMap;
 let lastCity;
 
-ymaps.ready(function () {
+ymaps.ready(function() {
     new Router({
         routes: [
             {
                 name: 'weather',
-                match: '',
+                match: ''
             },
             {
                 name: 'weather',
-                match: 'weather',
+                match: 'weather'
             },
             {
                 name: 'weather',
-                match: /weather\/(.+)/,
+                match: /weather\/(.+)/
             },
             {
                 name: 'about',
-                match: 'about',
+                match: 'about'
             },
             {
                 name: 'author',
-                match: 'author',
-            },
+                match: 'author'
+            }
         ],
-        eventBus: bus,
+        eventBus: bus
     });
 });
 
 // citySearch on enter
-document.getElementById('city')
-    .addEventListener("keyup", function(event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            document.getElementById('citySearch').click();
-        }
+document.getElementById('city').addEventListener('keyup', function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById('citySearch').click();
+    }
 });
 
 // citySearch on button click
