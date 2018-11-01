@@ -94,9 +94,7 @@ bus.on('route:weather:enter', function(city) {
             })
             .then(function(userinfo) {
                 let loc = userinfo.loc;
-                console.log(typeof loc);
                 let lat_lon = loc.split(',');
-                console.log(lat_lon);
                 bus.trigger('position:found', [+lat_lon[0], +lat_lon[1]]);
             });
     }
@@ -223,7 +221,6 @@ bus.on('history:add', city => {
 
 bus.on('favorites:updated', () => {
     document.getElementById('favorites-target').innerHTML = '';
-    console.log('favorit', favorites);
     for (let i = 0; i < favorites.length; i++) {
         let div = document.createElement('div');
         div.className = 'aItems';
@@ -250,7 +247,6 @@ bus.on('favorites:updated', () => {
         };
         div.appendChild(a);
         div.appendChild(x);
-        console.log('favorites-target', favorites[i].name);
         document.getElementById('favorites-target').appendChild(div);
     }
 });
