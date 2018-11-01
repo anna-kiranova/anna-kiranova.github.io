@@ -1,3 +1,3 @@
 # anna-kiranova.github.io
 
-Task 06 - Weather forecast
+https://anna-kiranova.github.io/weatherForecast/
