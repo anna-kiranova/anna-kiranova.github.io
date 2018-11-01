@@ -197,7 +197,7 @@ function showWheather(weather) {
     let icon = `<img class ="w" src="./icons/${w.icon}.png" alt="${
         w.icon
     }" width="50" title="${w.icon}"></img>`;
-    let press = `<div class ="w"> Pressure: ${w.pressure} mm Hg</div>`;
+    let press = `<div class ="w"> Pressure: ${w.pressure} hPa</div>`;
     let hum = `<div class ="w"> Humidity: ${w.humidity * 100} %</div>`;
     let wind = `<div class ="w"> Wind speed: ${w.windSpeed} m/s</div>`;
     document.getElementById('weather-target').innerHTML =
