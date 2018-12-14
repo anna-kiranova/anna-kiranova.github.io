@@ -19,3 +19,12 @@
 .demo {
     background-color: #48c9ab;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.indent {
+    padding-top: 10px;
+    padding-left: 50px;
+}
