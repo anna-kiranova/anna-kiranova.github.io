@@ -1,39 +1,179 @@
-
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-<!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>anna-kiranova.github.io</title>
-<meta name="generator" content="Jekyll v3.7.4" />
-<meta property="og:title" content="anna-kiranova.github.io" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://anna-kiranova.github.io/" />
-<meta property="og:url" content="https://anna-kiranova.github.io/" />
-<meta property="og:site_name" content="anna-kiranova.github.io" />
-<script type="application/ld+json">
-{"@type":"WebSite","headline":"anna-kiranova.github.io","url":"https://anna-kiranova.github.io/","name":"anna-kiranova.github.io","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="/assets/css/style.css?v=43e62280f6ba55e41ffdf0a8ce48d50d47a879b6">
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 
-      <h1 id="anna-kiranovagithubio">anna-kiranova.github.io</h1>
+    <link rel="stylesheet" href="style.css">
+    <title>Projects</title>
+</head>
 
-<p><a href="https://anna-kiranova.github.io/weatherForecast/">https://anna-kiranova.github.io/weatherForecast/</a></p>
-
-<p><a href="https://anna-kiranova.github.io/weatherForecast-legacy/">https://anna-kiranova.github.io/weatherForecast-legacy/</a></p>
-
-      
+<body>
+    <div class="jumbotron add-image">
+        <h1 class="display-4">Anna Kiranova</h1>
+        <p class="lead">
+            Minsk,
+            <a href="tel:+375445768889">+375 44 576-88-89</a>,
+            <a href="mailto:anne.kiranova@gmail.com">anne.kiranova@gmail.com</a>,
+            <a href="https://github.com/anna-kiranova">GitHub</a>
+        </p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#resume" role="button">Resume</a>
+            <a class="btn btn-primary btn-lg" href="#projects" role="button">Projects</a>
+        </p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-    
-  </body>
+
+    <div class="container marketing" id="projects-data">
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4 col-add-style">
+                <img class="rounded-circle" src="/img/sun.png" alt="Generic placeholder image" width="140" height="140">
+                <h2>weather forecast</h2>
+                <p>
+                    <a class="btn btn-secondary demo" href="/weatherForecast/" role="button">Live Demo »</a>
+                    <a class="btn btn-secondary" href="https://github.com/anna-kiranova/weather-forecast" role="button">Sources »</a>
+                </p>
+                <p class="p-add-style">Doing this project I used Yandex.Maps API, GoogleMapsAPI, CORS proxy (to get
+                    weather forecast info from DarkSky), I've learnt how to work with AJAX (XHR and fetch). Making this
+                    project I've used ES6 syntax.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 col-add-style">
+                <img class="rounded-circle" src="/img/todo1.jpg"
+                    alt="Generic placeholder image" width="140" height="140">
+                <h2>todo list</h2>
+                <p>
+                    <a class="btn btn-secondary demo" href="/todo-list-app/" role="button">Live Demo »</a>
+                    <a class="btn btn-secondary" href="https://github.com/anna-kiranova/todo-list-app" role="button">Sources »</a>
+                </p>
+                <p class="p-add-style">Classical todo list on React + Redux with advanced filtering. Used also React Semantic UI.</p>
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4 col-add-style">
+                <img class="rounded-circle" src="/img/calendar1.png"
+                    alt="Generic placeholder image" width="140" height="140">
+                <h2>calendar</h2>
+                <p>
+                    <a class="btn btn-secondary demo" href="/calendar/" role="button">Live Demo »</a>
+                    <a class="btn btn-secondary" href="https://github.com/anna-kiranova/calendar" role="button">Sources »</a>
+                </p>
+                <p class="p-add-style">First project which can be shown. Simple calendar widget with ability to add and delete notes.</p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">I am currently writting Conway's game of life.</h2>
+                <p class="lead">It will be ready soon.</p>
+            </div>
+            <div class="col-md-5">
+                <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;"
+                    src="/img/life3.png"
+                    data-holder-rendered="true">
+            </div>
+        </div>
+        <!-- /END THE FEATURETTES -->
+        <hr class="featurette-divider">
+
+    </div>
+
+    <div class="container marketing" id="resume-data" style="display: none">
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Objective</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+        
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Summary</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Skills</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Experience</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+        
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Education</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Additional information</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script>
+        'use strict';
+
+        window.addEventListener("hashchange", changePage);
+        
+        function changePage() {
+            if (window.location.hash === '#resume') {
+                showResume();
+            } else {
+                showProjects();
+            }
+        }
+        
+        function showProjects() {
+            document.getElementById('resume-data').style.display = 'none';
+            document.getElementById('projects-data').style.display = 'block';
+        }
+        
+        function showResume() {
+            document.getElementById('projects-data').style.display = 'none';
+            document.getElementById('resume-data').style.display = 'block';
+        
+        }
+        changePage();
+
+    </script>
+</body>
+
 </html>

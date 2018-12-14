@@ -1,0 +1,21 @@
+.add-image {
+    background-image: url(./img/13.jpg);
+}
+
+.col-add-style {
+    text-align: center;
+}
+
+.p-add-style {
+    text-align: justify;
+}
+
+.row-style {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.demo {
+    background-color: #48c9ab;
+}
