@@ -26,6 +26,7 @@
         <hr class="my-4">
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="#resume" role="button">Resume</a>
+            <a class="btn btn-primary btn-lg" href="#resume/ru" role="button">Resume (RU)</a>
             <a class="btn btn-primary btn-lg" href="#projects" role="button">Projects</a>
         </p>
     </div>
@@ -88,6 +89,118 @@
     </div>
 
     <div class="container marketing" id="resume-data" style="display: none">
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Objective</h2>
+                <p class="lead">Start a career of junior front-end developer</p>
+            </div>
+        </div><!-- /.row -->
+        
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Summary</h2>
+                <p class="lead">IT experience - banking software support,
+                    user support (on the first and second line of support). As part of the SoloLearn and 
+                    educational center "HPT" learned JavaScript standards ES5 and ES6/ES2015 as well as
+                    modern approaches to web development (React + Redux, build system - Webpack and Gulp).
+                    I speak foreign languages: English, French, Italian.
+                </p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Skills</h2>
+                <p class="lead">JavaScript, React, Redux, HTML, CSS, build systems Webpack и Gulp</p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Experience</h2>
+                <p class="lead">
+                    OJSC "BNB-Bank" (Belarusky narodny bank)
+                    <ul>
+                        <li>
+                            <span class="bold">June 2014 - August 2018</span> - Lead specialist of the information development department of technologies 
+                            and maintenance of banking software of the Office of information technologies
+                            <p class="indent">
+                                <span class="bold">Responsibilities:</span> 
+                                administration of the banking system, work with the Oracle database, development of technical specifications(TS)
+                                for revision, installation of updates and their testing, user support. I was engaged in implementation and 
+                                adaptation module SC-Archive for the requirements of the bank.
+                                I was engaged in implementation and adaptation the SC-Archive module for the requirements of the bank, I formed 
+                                the requirements (TS) for refinement for remote banking systems (client-bank services) for placing clients 
+                                documents in an electronic archive; and also I was engaged in training employees to work with the electronic archive system.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="bold">June 2013 - May 2014</span> - specialist of the information development department of technologies 
+                            and maintenance of banking software of the Office of information technologies
+                            (second line of user support)
+                        </li>
+                        <li>
+                            <span class="bold">October 2012 - May 2013</span> - customer support specialist of the Office of information technologies
+                            (first line of user support)
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div><!-- /.row -->
+        
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Education: high </h2>
+                <p class="lead">
+                    <span class="bold">2008 - 2013 - Academy of Management under the President of the Republic of Belarus</span> 
+                    - speciality management of information resources, qualification awarded - manager-economist of information systems
+                </p>
+            </div>
+        </div><!-- /.row -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+                <div class="row-style">
+                    <h2 class="featurette-heading">Courses</h2>
+                    <p class="lead">
+                        <ul>
+                            <li>
+                                March 2018 - August 2018- <span class="bold">course “Development of web applications in JavaScript” IT Academy (EC "HPT")</span>
+                            </li>
+                            <li>
+                                September, 2016 - <span class="bold">JavaScript Tutorial course</span>
+                            </li>
+                            <li>
+                                September 2012 - January 2013 - <span class="bold">English courses in LinguaLand, certificate - level B1(intermediate)</span>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div><!-- /.row -->
+    
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="row-style">
+                <h2 class="featurette-heading">Additional information</h2>
+                <p class="lead">
+                    I'm responsible, I always strive to bring to the end what I started, 
+                    I'm married and have a child, I have a driver's license, my hobby - quilling
+                </p>
+            </div>
+        </div><!-- /.row -->
+    </div>
+
+    <div class="container marketing" id="resume-ru-data" style="display: none">
         <div class="row featurette">
             <div class="row-style">
                 <h2 class="featurette-heading">Цель</h2>
@@ -212,6 +325,8 @@
         function changePage() {
             if (window.location.hash === '#resume') {
                 showResume();
+            } else if (window.location.hash === '#resume/ru') {
+                showRuResume();
             } else {
                 showProjects();
             }
@@ -219,14 +334,24 @@
         
         function showProjects() {
             document.getElementById('resume-data').style.display = 'none';
+            document.getElementById('resume-ru-data').style.display = 'none';
             document.getElementById('projects-data').style.display = 'block';
         }
         
         function showResume() {
             document.getElementById('projects-data').style.display = 'none';
+            document.getElementById('resume-ru-data').style.display = 'none';
             document.getElementById('resume-data').style.display = 'block';
         
         }
+
+        function showRuResume() {
+            document.getElementById('projects-data').style.display = 'none';
+            document.getElementById('resume-data').style.display = 'none';
+            document.getElementById('resume-ru-data').style.display = 'block';
+        
+        }
+
         changePage();
 
     </script>
