@@ -1,0 +1,102 @@
+openapi: 3.0.1
+info:
+  title: rs-node-aws
+  description: |
+    REST API for rs-node-aws
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: https://6wbmz3gefb.execute-api.eu-west-1.amazonaws.com/dev
+tags:
+- name: products
+  description: Everything about products
+paths:
+  /products:
+    get:
+      tags:
+      - products
+      summary: Get the full list of the products
+      operationId: getProductsList
+      responses:
+        200:
+          description: Successfull execution
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpCode500'
+  /products/{id}:
+    get:
+      tags:
+      - products
+      summary: Get one product info by its id
+      operationId: getProductById
+      parameters:
+      - name: id
+        in: path
+        description: The product ID
+        required: true
+        schema:
+          minimum: 1
+          type: integer
+      responses:
+        200:
+          description: Successfull execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        400:
+          description: Invalid parameters format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpCode400'
+        404:
+          description: No product found by provided id
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    default: No product found by id {id}
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpCode500'
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        price:
+          type: number
+    HttpCode400:
+      type: object
+      properties:
+        error:
+          type: string
+          default: Expecting number as product id
+    HttpCode500:
+      type: object
+      properties:
+        error:
+          type: string
+          default: Exception details
