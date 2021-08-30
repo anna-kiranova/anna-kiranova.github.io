@@ -46,8 +46,8 @@ paths:
         description: The product ID
         required: true
         schema:
-          minimum: 1
-          type: integer
+          type: string
+          minLength: 1
       responses:
         200:
           description: Successfull execution
