@@ -83,8 +83,10 @@ components:
       type: object
       properties:
         id:
-          type: integer
-        name:
+          type: string
+        title:
+          type: string
+        description:
           type: string
         price:
           type: number
