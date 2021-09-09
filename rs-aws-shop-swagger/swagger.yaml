@@ -8,27 +8,58 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   version: 1.0.0
 servers:
-- url: https://6wbmz3gefb.execute-api.eu-west-1.amazonaws.com/dev
+  - url: https://6wbmz3gefb.execute-api.eu-west-1.amazonaws.com/dev
 tags:
-- name: products
-  description: Everything about products
+  - name: products
+    description: Everything about products
 paths:
   /products:
     get:
       tags:
-      - products
+        - products
       summary: Get the full list of the products
       operationId: getProductsList
       responses:
-        200:
-          description: Successfull execution
+        '200':
+          description: Successful execution
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Product'
-        500:
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpCode500'
+    post:
+      tags:
+        - products
+      summary: Create a new product
+      operationId: createProduct
+      requestBody:
+        description: Product data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductData'
+      responses:
+        '200':
+          description: Successful execution
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        '400':
+          description: Invalid parameters for product creation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HttpCode400'
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -37,31 +68,31 @@ paths:
   /products/{id}:
     get:
       tags:
-      - products
+        - products
       summary: Get one product info by its id
       operationId: getProductById
       parameters:
-      - name: id
-        in: path
-        description: The product ID
-        required: true
-        schema:
-          type: string
-          minLength: 1
+        - name: id
+          in: path
+          description: The product ID
+          required: true
+          schema:
+            type: string
+            minLength: 1
       responses:
-        200:
-          description: Successfull execution
+        '200':
+          description: Successful execution
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Product'
-        400:
+        '400':
           description: Invalid parameters format
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/HttpCode400'
-        404:
+        '404':
           description: No product found by provided id
           content:
             application/json:
@@ -71,7 +102,7 @@ paths:
                   error:
                     type: string
                     default: No product found by id {id}
-        500:
+        '500':
           description: Internal Server Error
           content:
             application/json:
@@ -89,6 +120,19 @@ components:
         description:
           type: string
         price:
+          type: number
+        count:
+          type: number
+    ProductData:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        count:
           type: number
     HttpCode400:
       type: object
